@@ -1,1 +1,1 @@
-
+Plato's adalah sebuah bisnis yang bergerak di bidang makanan cepat saji 'Pizza', dan manajemen telah mengumpulkan data transaksi selama setahun terakhir. Namun, manajemen belum dapat memanfaatkannya dengan baik. Plato's berharap dapat menganalisis data penjualan dan menyusun laporan untuk membantu manajemen menemukan peluang untuk meningkatkan penjualan dan bekerja lebih efisien.

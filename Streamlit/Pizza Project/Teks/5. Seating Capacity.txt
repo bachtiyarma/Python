@@ -1,0 +1,1 @@
+Di <b>Plato's Pizzarea</b>, kapasitas tempat duduk mereka cukup besar, dengan 15 meja yang menampung total 60 kursi (1 meja berisi 4 kursi). Ini berarti bahwa pada saat puncak, restoran dapat melayani hingga 60 pelanggan sekaligus. Namun, pertanyaannya adalah seberapa efisien mereka menggunakan kapasitas tempat duduk mereka?

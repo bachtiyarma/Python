@@ -137,7 +137,7 @@ def display_peak_time(_agg):
     _, row1, _, row2, _ = streamlit.columns([0.1, 5, 0.1, 5, 0.1])
     _, row3, _ = streamlit.columns([0.1, 7.2, 0.1])
     
-    markdown_html(row0, text = css.subtitle(text = '<i>Peak Time</i> : Optimalkan Persiapan Staff Saat <Jam Makan Siang'))
+    markdown_html(row0, text = css.subtitle(text = '<i>Peak Time</i> : Optimalkan Persiapan Staff Saat Jam Makan Siang'))
     markdown_html(row0, text = dm.extract_text('4. Peak Time A.txt'))
     
     total_pizza_sold_per_day = agg.calc_total_pizza_sold_per_day()

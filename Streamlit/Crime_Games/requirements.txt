@@ -1,0 +1,4 @@
+streamlit
+hashlib
+base64
+pycryptodome

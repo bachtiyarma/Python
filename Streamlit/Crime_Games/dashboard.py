@@ -269,7 +269,7 @@ def final_answer(all_answer):
         try:
             decrypted = encryption.decrypt_ecb(encrypted, hashed_key)
         except:
-            decrypted = ''
+            decrypted = hashed_key
             
         
         teks2 = f'''

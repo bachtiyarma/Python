@@ -1,4 +1,4 @@
-from prophet import Prophet
+from fbprophet import Prophet
 
 def predict_qty_pizza(total_qty_pizza_per_day, pizza_name, period):
     condition1 = total_qty_pizza_per_day['pizza_name'] == pizza_name

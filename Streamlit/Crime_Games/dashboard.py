@@ -5,7 +5,7 @@ import encryption
 from PIL import Image
 from io import BytesIO
 
-warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore') 
 
 # Konfigurasi awal streamlit
 streamlit.set_page_config(

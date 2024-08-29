@@ -1,6 +1,7 @@
 import streamlit
 import warnings
 import css_style as css
+import ts_forecast as ts
 import data_manipulation as dm
 import plot_graph as pg
 
@@ -198,7 +199,7 @@ def display_prediction(_agg):
     markdown_html(row0, text = css.subtitle(text = '<i>Proyeksi Kedepan</i> : Perencanaan yang Lebih Matang'))
     total_qty_pizza_per_day = agg.calc_total_qty_pizza_per_day()
     
-    forecast = predict_qty_pizza(total_qty_pizza_per_day, pizza_name = 'The Barbecue Chicken Pizza', period = 90)
+    forecast = ts.predict_qty_pizza(total_qty_pizza_per_day, pizza_name = 'The Barbecue Chicken Pizza', period = 90)
     fig_prediction = pg.plot_prediction(
         data = forecast.set_index('ds'),
         value = 'y',

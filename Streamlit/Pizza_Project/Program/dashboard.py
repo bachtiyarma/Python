@@ -1,7 +1,7 @@
 import streamlit
 import warnings
 import css_style as css
-import ts_forecasting as ts
+#import ts_forecasting as ts
 import data_manipulation as dm
 import plot_graph as pg
 

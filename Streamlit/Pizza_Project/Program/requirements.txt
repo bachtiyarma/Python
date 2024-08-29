@@ -3,4 +3,4 @@ pandas
 numpy
 plotly
 openpyxl
-prophet
+prophet==1.1.5

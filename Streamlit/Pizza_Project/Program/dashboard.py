@@ -160,7 +160,7 @@ def display_peak_time(_agg):
     teks_pemisah_halaman()
 
 # LAYOUT 5
-#@streamlit.cache_resource
+@streamlit.cache_resource
 def display_seating_capacity(_agg):
     _, row0, _ = streamlit.columns([0.1, 7.2, 0.1])
     _, row1, _, row2, _ = streamlit.columns([0.1, 5, 0.1, 5, 0.1])
@@ -188,7 +188,20 @@ def display_seating_capacity(_agg):
     )
     
     teks_pemisah_halaman()
+
+# LAYOUT 6
+@streamlit.cache_resource
+def display_prediction(_agg):
+    _, row0, _ = streamlit.columns([0.1, 7.2, 0.1])
+    _, row1, _, row2, _ = streamlit.columns([0.1, 5, 0.1, 5, 0.1])
+    _, row3, _, row4, _ = streamlit.columns([0.1, 5, 0.1, 5, 0.1])
+    _, row5, _ = streamlit.columns([0.1, 7.2, 0.1])
     
+    markdown_html(row0, text = css.subtitle(text = '<i>Proyeksi Kedepan</i> : Perencanaan yang Lebih Matang'))
+    total_qty_pizza_per_day = agg.calc_total_qty_pizza_per_day()
+    fig_total_order_per_hour = pg.plot_total_order_per_hour(total_order_per_hour)
+    display_plotly(row2, fig_total_order_per_hour, container_width = True)
+
 if __name__ == "__main__":
     warnings.filterwarnings('ignore')
     

@@ -290,7 +290,7 @@ def header():
                 {teks}
             </p>
         '''
-    row2.write(
+    row1.write(
         recommendation_rectangle(f'{teks}'),
         unsafe_allow_html = True
     )

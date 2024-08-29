@@ -1,3 +1,4 @@
+import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -445,3 +446,68 @@ def plot_quantity_per_order(quantity_per_order):
     # Tampilkan grafik
     return(fig)
 
+def plot_prediction(
+    data : pandas.DataFrame,
+    value : str,
+    judul : str,
+    tipe : str,
+    warna : str = 'black',
+    showtrend : bool = False,
+):
+    fig = px.line(
+        data_frame = data,
+        x = data.index,
+        y = value,
+        color = tipe,
+        color_discrete_map = {
+            'original_data' : '#BA0001',
+            'prediction' : '#FFAF00'
+        } 
+    )
+
+    if(showtrend):
+        # Hitung koefisien regresi linier
+        coefficients = np.polyfit(range(len(data)), data[value], 1)
+        slope = coefficients[0]
+        intercept = coefficients[1]
+
+        # Tambahkan garis regresi ke plot
+        fig.add_scatter(
+            x = data.index,
+            y = range(len(data)) * slope + intercept,
+            mode = 'lines',
+            line = dict(
+                color = '#F7B4BB',
+                dash = 'dash'
+            )
+        )
+
+    fig.update_layout(
+        width = 1200,
+        height = 500,
+        showlegend = False,
+        plot_bgcolor = 'rgba(0, 0, 0, 0)',
+        title = dict(
+            text = judul,
+            font = dict(
+                size = 28,
+                color = '#B0A7A7'
+            ),
+            y = 0.92,
+            x = 0.5
+        ),
+        yaxis = dict(
+            title = '',
+            showgrid = False,
+            showline = False,
+            showticklabels = False,
+            zeroline = False,
+        ),
+        margin = dict(
+            t = 80,
+            b = 10,
+            r = 20
+        )
+    )
+
+    return(fig)

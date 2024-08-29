@@ -284,9 +284,9 @@ def final_answer(all_answer):
 
 def header():
     _, row1, _, row2, _ = streamlit.columns([1, 3, 0.5, 5, 1])
-    teks = 'Kejahatan semakin merajalela di London akhir-akhir ini. Kami menduga dalang dibalik tindak kriminal ini dilakukan secara berkelompok. Dugaan sementara adalah gangster. Ah.. Gangster ini sangat sulit dilacak karena mereka cukup tertutup dan rapi dalam melakukan setiap tindak kejahatannya. Namun, setelah dilakukan pemeriksaan secara menyeluruh, kami menemukan secarik kertas bertuliskan kode rahasia seperti berikut<br><b>vF2veKSs5I5Ea12dVJb+vTR4GPpfonqSi9f0ZoYzwNM=</b><br>Kami mencurigai pesan dibalik kode tersebut adalah nama gangster yang ingin kami selidiki. Kita tidak dapat melakukannya sendiri, kami perlu bantuanmu untuk memecahkan misteri ini. Kamu hanya perlu menganalisa pola kejahatan yang telah kami kumpulkan pertanyaannya. Jika kamu dapat menjawab semua pertanyaan ini dengan tepat, maka nama gangster akan muncul (dibagian paling bawah) dan segera laporkan ke kami atas pemecahan teka-teki tersebut dan bersama kami menumpas kejahatan yang selama ini meresahkan masyarakat'
+    teks = 'Kejahatan semakin merajalela di London akhir-akhir ini. Kami menduga dalang dibalik tindak kriminal ini dilakukan secara berkelompok. Dugaan sementara adalah gangster. Ah.. Gangster ini sangat sulit dilacak karena mereka cukup tertutup dan rapi dalam melakukan setiap tindak kejahatannya. Namun, setelah dilakukan pemeriksaan secara menyeluruh, kami menemukan secarik kertas bertuliskan kode rahasia seperti berikut<br><br><b>vF2veKSs5I5Ea12dVJb+vTR4GPpfonqSi9f0ZoYzwNM=</b><br><br>Kami mencurigai pesan dibalik kode tersebut adalah nama gangster yang ingin kami selidiki. Kita tidak dapat melakukannya sendiri, kami perlu bantuanmu untuk memecahkan misteri ini. Kamu hanya perlu menganalisa pola kejahatan yang telah kami kumpulkan pertanyaannya. Jika kamu dapat menjawab semua pertanyaan ini dengan tepat, maka nama gangster akan muncul (dibagian paling bawah) dan segera laporkan ke kami atas pemecahan teka-teki tersebut dan bersama kami menumpas kejahatan yang selama ini meresahkan masyarakat'
     teks = f'''
-            <p align="justify" style="font-size: 20px;">
+            <p align="justify" style="font-size: 12x;">
                 <b>{teks}</b>
             </p>
         '''

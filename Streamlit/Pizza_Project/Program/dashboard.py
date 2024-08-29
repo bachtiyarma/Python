@@ -224,4 +224,4 @@ if __name__ == "__main__":
     
     display_peak_time(agg)
     display_seating_capacity(agg)
-    display_prediction(agg)
+    #display_prediction(agg)

@@ -194,13 +194,21 @@ def display_seating_capacity(_agg):
 def display_prediction(_agg):
     _, row0, _ = streamlit.columns([0.1, 7.2, 0.1])
     _, row1, _, row2, _ = streamlit.columns([0.1, 5, 0.1, 5, 0.1])
-    _, row3, _, row4, _ = streamlit.columns([0.1, 5, 0.1, 5, 0.1])
-    _, row5, _ = streamlit.columns([0.1, 7.2, 0.1])
     
     markdown_html(row0, text = css.subtitle(text = '<i>Proyeksi Kedepan</i> : Perencanaan yang Lebih Matang'))
     total_qty_pizza_per_day = agg.calc_total_qty_pizza_per_day()
+    
+    forecast = predict_qty_pizza(total_qty_pizza_per_day, pizza_name = 'The Barbecue Chicken Pizza', period = 90)
+    fig_prediction = pg.plot_prediction(
+        data = forecast.set_index('ds'),
+        value = 'y',
+        tipe = 'category',
+        judul = f"<b><span style='color:#FFAF00'>Prediksi Penjualan</span><span style='color:#BA0001'> {pizza_name} </span></b><br><sup><sup>di Plato's Pizzarea untuk {period} hari Kedepan</sup></sup>",
+        showtrend = True
+    )
+
     fig_total_order_per_hour = pg.plot_total_order_per_hour(total_order_per_hour)
-    display_plotly(row2, fig_total_order_per_hour, container_width = True)
+    display_plotly(row1, fig_total_order_per_hour, container_width = True)
 
 if __name__ == "__main__":
     warnings.filterwarnings('ignore')
@@ -215,3 +223,4 @@ if __name__ == "__main__":
     
     display_peak_time(agg)
     display_seating_capacity(agg)
+    display_prediction(agg)

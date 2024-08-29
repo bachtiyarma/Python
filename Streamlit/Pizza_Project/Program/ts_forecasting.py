@@ -1,3 +1,4 @@
+"""
 from prophet import Prophet
 
 def predict_qty_pizza(total_qty_pizza_per_day, pizza_name, period):
@@ -26,3 +27,4 @@ def predict_qty_pizza(total_qty_pizza_per_day, pizza_name, period):
     forecast = pandas.concat([data_trx_per_day[['ds', 'pizza_name', 'y', 'category']], forecast])
     forecast['y'] = forecast['y'].round(0)
     return(forecast)
+"""

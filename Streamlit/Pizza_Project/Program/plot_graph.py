@@ -447,7 +447,7 @@ def plot_quantity_per_order(quantity_per_order):
     return(fig)
 
 def plot_prediction(
-    data : pandas.DataFrame,
+    data,
     value : str,
     judul : str,
     tipe : str,

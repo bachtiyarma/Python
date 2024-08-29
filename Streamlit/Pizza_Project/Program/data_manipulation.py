@@ -195,8 +195,7 @@ class Aggregation():
         num_order_per_hour = num_order_per_hour.groupby(['month_trx', 'day_trx', 'hour_trx']).agg(total_order_per_month = ('order_id', 'nunique'))
         num_order_per_hour = num_order_per_hour.groupby(['day_trx', 'hour_trx']).agg(avg_order_per_month = ('total_order_per_month', 'mean')).reset_index()
         num_order_per_hour['avg_order_per_month'] = num_order_per_hour['avg_order_per_month'].round().fillna(0)
-        
-        
+                
         avg_order_per_hour = num_order_per_hour.groupby(['hour_trx'], as_index = False).agg(avg_order_per_hour = ('avg_order_per_month', 'mean'))
         
         num_order_per_hour_pivot = num_order_per_hour.pivot(
@@ -204,9 +203,6 @@ class Aggregation():
             columns = 'hour_trx',
             values = 'avg_order_per_month'
         ).sort_values(by = 'day_trx', ascending = False)
-        
-        num_order_per_hour_pivot
-
         return(avg_order_per_hour, num_order_per_hour_pivot)
     
     def calc_total_order_per_hour(self):
@@ -220,3 +216,7 @@ class Aggregation():
         quantity_per_order['type_order'] = quantity_per_order['total'].apply(lambda x : '1-2 Order' if x <= 2 else '> 2 Order')
         quantity_per_order = quantity_per_order.groupby('type_order', as_index = False).agg(total = ('order_id', 'count'))
         return(quantity_per_order)
+
+    def calc_total_qty_pizza_per_day(self):
+        total_qty_pizza_per_day = self.data.groupby(['date', 'pizza_name'], as_index = False).agg(total_qty = ('quantity', 'sum'))
+        return(total_qty_pizza_per_day)

@@ -284,6 +284,10 @@ def final_answer(all_answer):
 
 def header():
     _, row1, _, = streamlit.columns([0.1, 7.2, 0.1])
+     
+    image_url = "https://raw.githubusercontent.com/bachtiyarma/Python/main/Streamlit/Crime%20Games/Header%20Crime.jpg"
+    row.image(image_url, use_column_width = True)
+    
     teks = 'Kejahatan semakin merajalela di London akhir-akhir ini. Kami menduga dalang dibalik tindak kriminal ini dilakukan secara berkelompok. Dugaan sementara adalah gangster. Ah.. Gangster ini sangat sulit dilacak karena mereka cukup tertutup dan rapi dalam melakukan setiap tindak kejahatannya. Namun, setelah dilakukan pemeriksaan secara menyeluruh, kami menemukan secarik kertas bertuliskan kode rahasia seperti berikut<br><p align="center"><b>vF2veKSs5I5Ea12dVJb+vTR4GPpfonqSi9f0ZoYzwNM=</b></p><p align="justify">Kami mencurigai pesan dibalik kode tersebut adalah nama gangster yang ingin kami selidiki. Kita tidak dapat melakukannya sendiri, kami perlu bantuanmu untuk memecahkan misteri ini. Kamu hanya perlu menganalisa pola kejahatan yang telah kami kumpulkan pertanyaannya. Jika kamu dapat menjawab semua pertanyaan ini dengan tepat, maka nama gangster akan muncul (dibagian paling bawah) dan segera laporkan ke kami atas pemecahan teka-teki tersebut dan bersama kami menumpas kejahatan yang selama ini meresahkan masyarakat</p>'
     teks = f'''
             <p align="justify" style="font-size: 11x;">
